@@ -19,5 +19,6 @@ ping_delay{hostname="ffweb-k8s-client",listen="10.88.0.39",port="8999",port_name
 ping_delay{hostname="ffweb-k8s-client",listen="127.0.0.1",port="5000",port_name="commplex-main"} 0.0
 ping_delay{hostname="ffweb-k8s-client",listen="127.0.0.1",port="8080",port_name="webcache"} 0.0
 ```
-> 0 Open
-  1 Close
+**备注**
+- 0 Open
+-  1 Close
