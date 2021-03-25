@@ -20,7 +20,7 @@ REGISTRY = CollectorRegistry(auto_describe=False)
 
 class STATUS():
     # Port check
-    PortStatus = Gauge('ping_delay', 'network ping delay', ['listen', 'port', 'port_name', 'hostname'],
+    PortStatus = Gauge('port_status', 'Port check', ['listen', 'port', 'port_name', 'hostname'],
                        registry=REGISTRY)
 
     def __init__(self):
