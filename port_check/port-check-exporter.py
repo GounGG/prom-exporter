@@ -17,7 +17,6 @@ app = Flask(__name__)
 # 定义一个仓库
 REGISTRY = CollectorRegistry(auto_describe=False)
 
-
 class STATUS():
     # Port check
     PortStatus = Gauge('port_status', 'Port check', ['listen', 'port', 'port_name', 'hostname'],
@@ -44,7 +43,8 @@ class STATUS():
                 listen_info['host'] = host
                 listen_info['port'] = port
                 try:
-                    listen_info['port_name'] = socket.getservbyport(int(port))
+                    # 获取进程名
+                    listen_info['port_name'] = re.search('users:\(\((.*)\)', line).group(1).split(",")[0].strip('\"')
                 except Exception as e:
                     pass
                 ports.append(listen_info)
